@@ -1,0 +1,46 @@
+# Source files (we only publish compiled JS)
+src/
+bin/*.ts
+
+# Test files
+test/
+*.test.ts
+coverage/
+.nyc_output/
+
+# Examples
+examples/
+
+# Documentation source
+docs/
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Development files
+.env*
+.eslintrc*
+.prettierrc*
+.editorconfig
+tsconfig.json
+jest.config.js
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Misc
+*.tgz
+npm-debug.log*

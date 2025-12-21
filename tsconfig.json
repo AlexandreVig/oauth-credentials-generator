@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020" /* Set the JavaScript language version for emitted JavaScript */,
+    "lib": ["ES2020"] /* Specify a set of bundled library declaration files */,
+
+    /* Modules */
+    "module": "commonjs" /* Specify what module code is generated */,
+    "rootDir": "./" /* Specify the root folder within your source files */,
+    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier */,
+    "resolveJsonModule": true /* Enable importing .json files */,
+
+    /* Emit */
+    "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files */,
+    "declarationMap": true /* Create sourcemaps for d.ts files */,
+    "sourceMap": true /* Create source map files for emitted JavaScript files */,
+    "outDir": "./lib" /* Specify an output folder for all emitted files */,
+    "removeComments": true /* Disable emitting comments */,
+
+    /* Interop Constraints */
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports */,
+
+    /* Type Checking */
+    "strict": true /* Enable all strict type-checking options */,
+    "noUnusedLocals": true /* Enable error reporting when local variables aren't read */,
+    "noUnusedParameters": true /* Raise an error when a function parameter isn't read */,
+    "noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return */,
+    "noFallthroughCasesInSwitch": true /* Enable error reporting for fallthrough cases in switch statements */,
+
+    /* Completeness */
+    "skipLibCheck": true /* Skip type checking all .d.ts files */
+  },
+  "include": ["src/**/*", "bin/**/*"],
+  "exclude": ["node_modules", "lib", "test", "**/*.test.ts"]
+}

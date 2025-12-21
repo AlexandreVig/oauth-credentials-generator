@@ -1,0 +1,71 @@
+{
+  "name": "oauth-credentials-generator",
+  "version": "1.0.0",
+  "description": "Generate secure OAuth client IDs and secrets with customizable prefixes",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "bin": {
+    "generate-oauth": "./lib/bin/generate-oauth.js"
+  },
+  "files": [
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "postbuild": "chmod +x lib/bin/generate-oauth.js && node -e \"const fs=require('fs'); const file='lib/bin/generate-oauth.js'; const content=fs.readFileSync(file,'utf8'); if(!content.startsWith('#!/usr/bin/env node')){fs.writeFileSync(file,'#!/usr/bin/env node\\n'+content)}\"",
+    "clean": "rm -rf lib/",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build && npm test",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js test/index.test.ts",
+    "test:cli": "npm run build && node --experimental-vm-modules node_modules/jest/bin/jest.js test/cli.test.ts",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "lint": "eslint src/ bin/ --ext .ts",
+    "lint:fix": "eslint src/ bin/ --ext .ts --fix",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "preversion": "npm run build && npm test",
+    "version": "npm run format && git add -A",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "oauth",
+    "credentials",
+    "generator",
+    "client-id",
+    "client-secret",
+    "authentication",
+    "security",
+    "crypto"
+  ],
+  "author": "Alexandre Vigneau <alexandre.vigneau@epitech.eu>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexandreVig/oauth-credentials-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlexandreVig/oauth-credentials-generator/issues"
+  },
+  "homepage": "https://github.com/AlexandreVig/oauth-credentials-generator#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "eslint": "^9.39.2",
+    "jest": "^30.2.0",
+    "prettier": "^3.7.4",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

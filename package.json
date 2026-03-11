@@ -1,6 +1,6 @@
 {
   "name": "oauth-credentials-generator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Generate secure OAuth client IDs and secrets with customizable prefixes",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.4.0",
     "@typescript-eslint/eslint-plugin": "^8.57.0",
     "@typescript-eslint/parser": "^8.57.0",
     "eslint": "^10.0.0",

@@ -70,17 +70,6 @@ export function generateRandomString(
     bytes = Math.ceil((length * 3) / 4) + 2;
   }
 
-  if (encoding === "base64url") {
-    // Generate base64url-safe string (URL-safe, no padding)
-    return crypto
-      .randomBytes(bytes)
-      .toString("base64")
-      .replace(/\+/g, "-")
-      .replace(/\//g, "_")
-      .replace(/=/g, "")
-      .substring(0, length);
-  }
-
   return crypto.randomBytes(bytes).toString(encoding).substring(0, length);
 }
 

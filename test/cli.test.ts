@@ -32,7 +32,7 @@ function runCLI(args: string[] = []): {
  * Execute CLI asynchronously
  */
 function runCLIAsync(
-  args: string[]
+  args: string[],
 ): Promise<{ stdout: string; stderr: string; exitCode: number }> {
   return new Promise((resolve) => {
     const process = spawn("node", [CLI_PATH, ...args]);

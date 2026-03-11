@@ -74,33 +74,33 @@ describe("generateOAuthCredentials", () => {
 
   test("validates idPrefix", () => {
     expect(() => generateOAuthCredentials({ idPrefix: "" })).toThrow(
-      "idPrefix must be a non-empty string"
+      "idPrefix must be a non-empty string",
     );
   });
 
   test("validates idLength", () => {
     expect(() => generateOAuthCredentials({ idLength: 0 })).toThrow(
-      "idLength must be a positive integer"
+      "idLength must be a positive integer",
     );
 
     expect(() => generateOAuthCredentials({ idLength: -1 })).toThrow(
-      "idLength must be a positive integer"
+      "idLength must be a positive integer",
     );
 
     expect(() => generateOAuthCredentials({ idLength: 1.5 as number })).toThrow(
-      "idLength must be a positive integer"
+      "idLength must be a positive integer",
     );
   });
 
   test("validates secretLength", () => {
     expect(() => generateOAuthCredentials({ secretLength: 0 })).toThrow(
-      "secretLength must be a positive integer"
+      "secretLength must be a positive integer",
     );
   });
 
   test("validates encoding", () => {
     expect(() =>
-      generateOAuthCredentials({ encoding: "invalid" as EncodingFormat })
+      generateOAuthCredentials({ encoding: "invalid" as EncodingFormat }),
     ).toThrow("encoding must be one of: hex, base64, base64url");
   });
 
@@ -123,7 +123,9 @@ describe("generateOAuthCredentials", () => {
       secretLength: 32,
     });
 
-    const idPart = credentials.clientId.substring(credentials.clientId.indexOf("_") + 1);
+    const idPart = credentials.clientId.substring(
+      credentials.clientId.indexOf("_") + 1,
+    );
     expect(/^[A-Za-z0-9_-]+$/.test(idPart)).toBe(true);
     expect(/^[A-Za-z0-9_-]+$/.test(credentials.clientSecret)).toBe(true);
   });

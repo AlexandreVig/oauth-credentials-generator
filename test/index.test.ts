@@ -123,7 +123,7 @@ describe("generateOAuthCredentials", () => {
       secretLength: 32,
     });
 
-    const idPart = credentials.clientId.split("_")[1];
+    const idPart = credentials.clientId.substring(credentials.clientId.indexOf("_") + 1);
     expect(/^[A-Za-z0-9_-]+$/.test(idPart)).toBe(true);
     expect(/^[A-Za-z0-9_-]+$/.test(credentials.clientSecret)).toBe(true);
   });

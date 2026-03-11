@@ -1,6 +1,6 @@
 {
   "name": "oauth-credentials-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate secure OAuth client IDs and secrets with customizable prefixes",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
